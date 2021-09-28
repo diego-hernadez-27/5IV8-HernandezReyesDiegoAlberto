@@ -4,9 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CIFRADOS</title>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+
 </head>
 <body>
-    Hola jaja
+
+    <div id="menu">
+
+        <ul>
+            <li><a href="#">CÉSAR</a></li>
+            <li><a href="#">VIGGENERE</a></li>
+        </ul>
+
+    </div>
+
+    <div id="llenado">
+        <h2>CIFRADO CÉSAR</h2>
+        <p>Ingrese el mensaje a cifrar o descifrar:</p>
+        <div class="field-container">
+            <i class="fa fa-commenting-o fa-lg"></i>
+            <textarea id="ctext" rows="3" cols="40" class="field"></textarea>
+        </div>
+        
+        
+        <table style="margin: 0 auto;">
+            <td>
+                <input class="btn btn-info" type="button"  value="CIFRAR" onClick="ccifrar()">
+            </td>
+            <td>
+                <input type="button"  value="DESCIFRAR" onClick="cdescifrar()" class="btn btn-primary">
+            </td>
+        </table>
+
+        <div class="field-container">
+            <i class="fa fa-envelope-o fa-lg"></i>
+            <textarea id="cresul" readonly  rows="3" cols="40" class="field"></textarea>
+        </div>
+        
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h2>CIFRADO VIGGENERE</h2>
+    <p>Ingrese el mensaje a cifrar o descifrar:</p>
+    <textarea id="vtext" rows="3" cols="40" class="txtarea"></textarea>
+    <p>Ingrese la llave:</p>
+    <textarea id="llave" rows="2" cols="40" class="txtarea"></textarea>
+
+    <table style="margin: 0 auto;">
+        <td>
+            <input type="button"  value="CIFRAR" onclick="RebuildString(Encriptar(true))" class="btn btn-info">
+        </td>
+        <td>
+            <input type="button"  value="DESCIFRAR" onclick="RebuildString(Encriptar(false))" class="btn btn-primary">
+        </td>
+    </table>
+
+
+    <textarea id="vresul" readonly rows="3" cols="40" class="txtarea"></textarea>
+
+    <script src="JS/Operaciones.js"></script>
+
 </body>
 </html>
