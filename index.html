@@ -12,70 +12,79 @@
 <body>
 
     <div id="menu">
-
         <ul>
-            <li><a href="#">CÉSAR</a></li>
+            <li><a href="#" class="active">CÉSAR</a></li>
             <li><a href="#">VIGGENERE</a></li>
         </ul>
-
     </div>
-
     <div id="formularios">
-    <form id="llenado">
-        <h2>CIFRADO CÉSAR</h2>
-        <p>Ingrese el mensaje a cifrar o descifrar:</p>
-        <div class="field-container">
-            <i class="fa fa-commenting-o fa-lg"></i>
-            <textarea id="ctext" rows="3" cols="40" class="field"></textarea>
-        </div>
-        <br>
-        <br>
-        <table style="margin: 0 auto;">
-            <td>
-                <input class="btn btn-green" type="button"  value="CIFRAR" onClick="ccifrar()">
-            </td>
-            <td>
-                <input type="button"  value="DESCIFRAR" onClick="cdescifrar()" class="btn btn-red">
-            </td>
-        </table>
-        <br>
-        <br>
-        <div class="field-container">
-            <i class="fa fa-envelope-o fa-lg"></i>
-            <textarea id="cresul" readonly  rows="3" cols="40" class="field"></textarea>
-        </div>
-        <br>
-    </form>
-    <form id="llenado">
-        <h2>CIFRADO VIGGENERE</h2>
-        <p>Ingrese el mensaje a cifrar o descifrar:</p>
-        <div class="field-container">
-            <i class="fa fa-commenting-o fa-lg"></i>
-            <textarea id="vtext" rows="3" cols="40" class="field"></textarea>
-        </div>
-        <p>Ingrese la llave:</p>
-        <div class="field-container">
-            <i class="fa fa-key" aria-hidden="true"></i>
-            <textarea id="llave" rows="2" cols="40" class="field"></textarea>
-        </div>
-        <br>
-        <table style="margin: 0 auto;">
-            <td>
-                <input type="button"  value="CIFRAR" onclick="RebuildString(Encriptar(true))" class="btn btn-green">
-            </td>
-            <td>
-                <input type="button"  value="DESCIFRAR" onclick="RebuildString(Encriptar(false))" class="btn btn-red">
-            </td>
-        </table>
-        <br>
-        <div class="field-container">
-            <i class="fa fa-envelope-o fa-lg"></i>
-            <textarea id="vresul" readonly rows="3" cols="40" class="field"></textarea>
-        </div>
-    </form>
+        <form action="">
+            <h2>CIFRADO CÉSAR</h2>
+            <p>Ingrese el mensaje a cifrar o descifrar:</p>
+            <div class="field-container">
+                <i class="fa fa-commenting-o fa-lg"></i>
+                <textarea id="ctext" rows="3" cols="40" class="field"></textarea>
+            </div>
+            <br>
+            <br>
+            <table style="margin: 0 auto;">
+                <td>
+                    <input class="btn btn-green" type="button"  value="CIFRAR" onClick="ccifrar()">
+                </td>
+                <td>
+                    <input type="button"  value="DESCIFRAR" onClick="cdescifrar()" class="btn btn-red">
+                </td>
+            </table>
+            <br>
+            <br>
+            <div class="field-container">
+                <i class="fa fa-envelope-o fa-lg"></i>
+                <textarea id="cresul" readonly  rows="3" cols="40" class="field"></textarea>
+            </div>
+            <br>
+        </form>
+        <form action="" id="form-vigge">
+            <h2>CIFRADO VIGGENERE</h2>
+            <p>Ingrese el mensaje a cifrar o descifrar:</p>
+            <div class="field-container">
+                <i class="fa fa-commenting-o fa-lg"></i>
+                <textarea id="vtext" rows="3" cols="40" class="field"></textarea>
+            </div>
+            <p>Ingrese la llave:</p>
+            <div class="field-container">
+                <i class="fa fa-key" aria-hidden="true"></i>
+                <textarea id="llave" rows="2" cols="40" class="field"></textarea>
+            </div>
+            <br>
+            <table style="margin: 0 auto;">
+                <td>
+                    <input type="button"  value="CIFRAR" onclick="RebuildString(Encriptar(true))" class="btn btn-green">
+                </td>
+                <td>
+                    <input type="button"  value="DESCIFRAR" onclick="RebuildString(Encriptar(false))" class="btn btn-red">
+                </td>
+            </table>
+            <br>
+            <div class="field-container">
+                <i class="fa fa-envelope-o fa-lg"></i>
+                <textarea id="vresul" readonly rows="3" cols="40" class="field"></textarea>
+            </div>
+        </form>
     </div>
 
     <script src="JS/Operaciones.js"></script>
+    <script src="JS/jquery.js"></script>
+    <script>
+		$(function(){
+			$("#menu li").on("click", function(){
+				var i = $(this).index();
+				$("#formularios form").hide();
+				$("#formularios form").eq(i).show();
+				$("#menu li a").removeClass("active");
+				$(this).find("a").addClass("active");
+			});
+		});
+	</script>
 
 </body>
 </html>
