@@ -64,8 +64,8 @@ var cesar = cesar || (function(){
 //funcion de cifrado
 
 function ccifrar(){
-    document.getElementById("cresul").innerHTML =
-    cesar.encode(document.getElementById("ctext").value, 3);
+    document.getElementById('cresul').innerHTML =
+    cesar.encode(document.getElementById('ctext').value, 3);
 }
 
 //funcion de descifrado
@@ -177,3 +177,4 @@ function PhraseToArray(Frase){
     }
     document.getElementById('vresul').value = Salida;
 }
+

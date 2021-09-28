@@ -11,6 +11,8 @@
 </head>
 <body>
 
+    <center><H1>Hernández Reyes Diego Alberto 5IV8</H1></center>
+
     <div id="menu">
         <ul>
             <li><a href="#" class="active">CÉSAR</a></li>
@@ -23,7 +25,7 @@
             <p>Ingrese el mensaje a cifrar o descifrar:</p>
             <div class="field-container">
                 <i class="fa fa-commenting-o fa-lg"></i>
-                <textarea id="ctext" rows="3" cols="40" class="field"></textarea>
+                <textarea id="ctext" rows="3" cols="40" class="field" onkeypress="return SoloLetras(event);"></textarea>
             </div>
             <br>
             <br>
@@ -48,12 +50,12 @@
             <p>Ingrese el mensaje a cifrar o descifrar:</p>
             <div class="field-container">
                 <i class="fa fa-commenting-o fa-lg"></i>
-                <textarea id="vtext" rows="3" cols="40" class="field"></textarea>
+                <textarea id="vtext" rows="3" cols="40" class="field" onkeypress="return SoloLetras(event);"></textarea>
             </div>
             <p>Ingrese la llave:</p>
             <div class="field-container">
                 <i class="fa fa-key" aria-hidden="true"></i>
-                <textarea id="llave" rows="2" cols="40" class="field"></textarea>
+                <textarea id="llave" rows="2" cols="40" class="field" onkeypress="return SoloLetras(event);"></textarea>
             </div>
             <br>
             <table style="margin: 0 auto;">
@@ -71,6 +73,8 @@
             </div>
         </form>
     </div>
+    <br>
+    <center><p>Yo pensaba que se entregaba el 28 7u7</p></center>
 
     <script src="JS/Operaciones.js"></script>
     <script src="JS/jquery.js"></script>
@@ -85,6 +89,32 @@
 			});
 		});
 	</script>
+
+<script>
+    
+    function SoloLetras(e)
+    {
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toString();
+    letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    
+    especiales = [8,13];
+    tecla_especial = false
+    for(var i in especiales) {
+    if(key == especiales[i]){
+     tecla_especial = true;
+     break;
+    }
+    }
+    
+    if(letras.indexOf(tecla) == -1 && !tecla_especial)
+    {
+     alert("Ingresar solo letras");
+     return false;
+    }
+    }
+    
+    </script>
 
 </body>
 </html>
